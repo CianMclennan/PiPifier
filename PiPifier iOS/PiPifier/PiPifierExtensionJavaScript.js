@@ -54,6 +54,15 @@ PiPifierExtensionClass.prototype = {
             // blue.
             alert("Pipifier Message: " + errorMessage);
         }
+        
+        function fullScreen(){
+            var video = document.getElementsByTagName('video')[0];
+            video.webkitSetPresentationMode('fullscreen');
+        }
+        var old_element = document.getElementsByClassName("_mbj _mkt")[0];
+        var new_element = old_element.cloneNode(true);
+        new_element.addEventListener("click", fullScreen);
+        old_element.parentNode.replaceChild(new_element, old_element);
     }
     
 };
